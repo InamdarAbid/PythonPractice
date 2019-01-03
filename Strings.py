@@ -6,6 +6,9 @@ print("He's a stupid")
 print('he\'s a stupid') #Escape character
 
 a1 = 'Hello'
+#Important for competative where new line output not required
+print('hello',end=' ')
+print("World I am back")
 #Remember arrays are zero based
 print(a1[0])
 print(a1[3])
