@@ -1,3 +1,4 @@
+'''
 #Function is initialysed with def keyword 
 #Function with default parameter set so no error
 def display(name='Abid'):
@@ -35,3 +36,25 @@ def area(length,bredth):
 #The area is same mehtod name for all functions which so compiler differenciate between them by the number of parameters and type of parameters
 leng,bre = int(input("Enter length of rectangle : ")),int(input("Enter bredth of rectangle : ")) 
 print("Area of rectangle is", area(leng,bre))
+
+#You can return function as a return type
+#This is very useful in Pandas and sklearn libraries
+
+def area_square():
+    def volume(side):
+        return side ** 3
+    return volume
+
+side = input("Enter side of square : ")
+result = area_square()
+print('Volume of square is',result(int(side)))
+'''
+#Recursive functions
+def fibo(n):
+    if n <= 1:
+        return n
+    else:
+        return fibo(n-1) + fibo(n-2)
+
+print(fibo(6))
+# Fibonacii series : 1 1 2 3 5 8 13 ...
