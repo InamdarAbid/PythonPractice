@@ -32,3 +32,19 @@ print(a3.lower())
 friends = "Aman,Vishal,Sagar"
 print(friends.split(","))
 print(len(a3))
+
+my_string = '''Hello'''
+print(my_string)
+
+# triple quotes string can extend multiple lines
+my_string = """Hello, welcome to
+           the world of Python"""
+print(my_string)
+
+#String methods
+string = "hello world"
+print(string.capitalize()) #Capitalize first lettor of string
+print(string.center(0)) #Returns a centered string
+print(string.count("hello"))
+print(string.encode())
+print(string.endswith("ld"))
