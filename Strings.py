@@ -32,6 +32,12 @@ print(a3.lower())
 friends = "Aman,Vishal,Sagar"
 print(friends.split(","))
 print(len(a3))
+string = "good morning"
+print(string.capitalize()) #Capitalize first lettor of string
+print(string.center(1)) #Returns a centered string
+print(string.count("hello"))
+print(string.encode())
+print(string.endswith("ld"))
 
 my_string = '''Hello'''
 print(my_string)
@@ -40,11 +46,3 @@ print(my_string)
 my_string = """Hello, welcome to
            the world of Python"""
 print(my_string)
-
-#String methods
-string = "hello world"
-print(string.capitalize()) #Capitalize first lettor of string
-print(string.center(0)) #Returns a centered string
-print(string.count("hello"))
-print(string.encode())
-print(string.endswith("ld"))
