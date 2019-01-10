@@ -31,3 +31,19 @@ print(cats)
 num = [cats,fibo1,[1,2,3,4]]
 print(num[0])
 print(num[1][2])
+
+prizes = [5,10,50,100,500]
+# double_price = []
+# for price in prizes:
+#     double_price.append(price * 2)
+# print(double_price)
+
+#comprehension method
+double_price = [price*2 for price in prizes]
+print(double_price)
+
+#Cubing all numbers
+nums = [1,2,3,4,5,6,7,8,9,10]
+
+cubed_numbers = [num ** 3 for num in nums if(num ** 3) % 2 == 0]
+print(cubed_numbers)

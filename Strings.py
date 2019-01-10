@@ -35,9 +35,15 @@ print(len(a3))
 string = "good morning"
 print(string.capitalize()) #Capitalize first lettor of string
 print(string.center(1)) #Returns a centered string
-print(string.count("hello"))
-print(string.encode())
-print(string.endswith("ld"))
+print(string.count("hello")) #Returns the number of times a specified value occurs in a string
+print(string.encode())  #Returns an encoded version of the string
+print(string.endswith("ld")) 
+print(string.find("orn")) #Searches the string for a specified value and returns the position of where it was found
+print(string.isalnum()) #Returns True if all characters in the string are alphanumeric
+print(string.isalpha()) #Returns True if all characters in the string are alphabet
+print(string.isdecimal()) #Returns True if all characters in the string are decimals
+print(string.isdigit()) #Returns True if all characters in the string are digits
+print(string.isidentifier()) #Returns True if the string is an identifier
 
 my_string = '''Hello'''
 print(my_string)
