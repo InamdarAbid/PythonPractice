@@ -47,3 +47,7 @@ nums = [1,2,3,4,5,6,7,8,9,10]
 
 cubed_numbers = [num ** 3 for num in nums if(num ** 3) % 2 == 0]
 print(cubed_numbers)
+
+vegs = ['Potato','Tomato','beetroot','lorem','ipsum']
+veg_cap =  [veg.upper() for veg in vegs if veg != 'lorem']
+print(veg_cap)
