@@ -1,29 +1,29 @@
-class Inputs:    
+from calc import Calculations as cal
+class Inputs:
+    
+    global menu
+    global mapping
+    menu = {
+        'PPF':0,
+        'EPF':0,
+        'SSY':0,
+        'ELSS':0,
+        'NPS':0
+    }
 
+    mapping = {
+        1:'PPF',
+        2:'EPF',
+        3:'SSY',
+        4:'ELSS',
+        5:'NPS'
+    }
+    
     def __init__(self):
         self.ctc = 0
         self.base_sal = 0
         self.total_tax = 0
         self.invest = 0
-    
-    @staticmethod
-    def tax_cal(ctc):
-        ten = 0
-        twinty = 0
-        thirty = 0
-        if ctc <= 250000:
-            print("Your earning is completly TAX FREE ! Just file the income tax return annuly.")
-        elif ctc <= 500000:
-            ten = ctc - 250000
-        elif ctc <= 1000000:
-            ten = 250000
-            twinty = ctc - 250000
-        else:
-            ten = 250000
-            twinty = 500000
-            thirty = ctc - 1000000 
-        total_tax = (ten * 0.1) + (twinty * 0.2) + (thirty * 0.3)
-        return total_tax
     
     def take_inputs(self):
         self.ctc += int(input("Enter your CTC (in numbers): "))
@@ -33,13 +33,40 @@ class Inputs:
             pf = (12 * 0.125 * self.base_sal)
             if pf > 150000:
                 temp = pf - 150000
-                pf = 150000
                 self.ctc += temp
-            self.invest += pf
-            self.ctc -= self.invest
+                self.invest += 150000
+            else:
+                self.invest = pf 
+            menu['EPF'] = pf
+            # print("pf",menu['EPF'])
         else:
             self.base_sal = 0
-        total_tax = Inputs.tax_cal(self.ctc)
-        print(f"Your annual due tax is : {total_tax}")
+        self.total_tax = cal.tax_cal(self.ctc,self.invest)
     
+    def display_invest(self):
+        print("Your current investment is ")
+        for key,val in menu.items():
+            print(f"{key:10} : Rs. {val}")
     
+    @staticmethod
+    def display_menu():
+        keys = list(menu.keys())
+        for i in range(0,5):
+            print(f"{(i+1)}. {keys[i]}")
+    
+    def add_item(self,ch,amt):
+        temp = mapping[ch]
+        # print(menu[temp])
+        if ch == 2:
+            print("You cannot add to EPF just opt-in for PF in your company")
+            return
+        if (ch == 1 or ch == 3) and amt > 150000:
+            print("You cannot invest more then 150000 in PPF or SSY")
+            return
+        if (self.invest + amt) > 150000:
+            temp2 = amt + self.invest - 150000
+            menu[temp] = amt - temp2
+            self.invest = 150000
+        else:
+            self.invest = amt + self.invest
+            menu[temp] = amt
