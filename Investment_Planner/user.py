@@ -70,3 +70,11 @@ class Inputs:
         else:
             self.invest = amt + self.invest
             menu[temp] = amt
+        if ch == 5:
+            if amt > 50000:
+                temp2 = amt + self.invest - 50000
+                menu[temp] = 50000.0
+                self.invest += 50000.0
+            else:
+                self.invest += amt
+                menu[temp] = amt
