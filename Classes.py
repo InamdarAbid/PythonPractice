@@ -25,3 +25,20 @@ person.display() #You can also use print statement here
 print(person.name,"is",person.height,"ft tall")
 
 pserson_two = Names()
+
+
+class Calculator:
+    def addition(x,y):
+        print(x+y)
+    
+    def sub(x,y):
+        print(x-y)
+
+    def mul(x,y):
+        print(x*y)
+    
+    def div(x,y):
+        print(x/y)
+
+Calculator.addition(75,65) #If the 
+Calculator.sub(7,65)    
