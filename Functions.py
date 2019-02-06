@@ -58,3 +58,11 @@ def fibo(n):
 
 print(fibo(6))
 # Fibonacii series : 1 1 2 3 5 8 13 ...
+
+def funct2():
+    print("Inside funct2")
+    return 25,5
+
+x,y = funct2()
+
+print(x,"",y)
