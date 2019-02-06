@@ -1,0 +1,3 @@
+Text to be wtitten to the file. 
+New line text.
+Some new text
