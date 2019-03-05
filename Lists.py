@@ -54,3 +54,6 @@ print(veg_cap)
 i,j,k = 2,3,4
 res = [[a,b,c] for a in range(i) for b in range(j) for c in range(k)]
 print(res)
+
+a,b = [23,89]
+print(a,b) #Unpacking the list

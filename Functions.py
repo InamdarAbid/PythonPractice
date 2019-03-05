@@ -66,3 +66,23 @@ def funct2():
 x,y = funct2()
 
 print(x,"",y)
+
+def list_to_par(a,b,c,d):
+    return a+b+c+d
+
+l1 = [7,8,6,11]
+# list_to_par(li) #Gives error
+print(list_to_par(*l1)) #list unpacking
+
+def updation(*arg):
+    arg[0][0] = 15
+    arg[0][3] = 77
+    print(list_to_par(*arg[0]))
+    print(arg)
+
+updation(l1)
+
+def list_com(a,c,*b):
+    print(a,c,b)
+
+list_com(10,"Abid","Aman","Ram",14,19)
